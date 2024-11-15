@@ -1,0 +1,114 @@
+@font-face {
+    src: url(../fonts/Vazirmatn-Regular.woff2);
+    font-family: Vazir;
+}
+
+@font-face {
+    src: url(../fonts/Vazirmatn-Bold.woff2);
+    font-family: VazirBold;
+    font-weight: bold;
+}
+
+@font-face {
+    src: url(../fonts/Vazir-Regular-dotless.woff);
+    font-family: VazirDotless;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	direction: rtl;
+}
+
+body {
+	font-family: Vazir;
+	background-color: #3498db !important;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+    text-decoration: none;
+}
+
+#container {
+	max-width: 750px;
+	width: 100%;
+	margin: 3rem auto;
+	text-align: justify;
+}
+
+main {
+	padding: 1rem;
+	background-color: #FFF;
+	border-radius: 6px;
+}
+
+textarea {
+	width: 100%;
+	height: 38px;
+	font-family: inherit;
+}
+
+#text_container {
+	position: relative;
+}
+
+#x {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+#zoom {
+	display: grid;
+	margin-block-start: 20px;
+	grid-template-columns: repeat(3, 40px);
+	justify-content: space-evenly;
+}
+
+#zoom div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1;
+}
+
+#result_container {
+	position: relative;
+}
+
+#result {
+	position: relative;
+	border: 1px solid silver;
+	padding: 5px;
+	border-radius: 5px;
+	margin-block-start: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#result:empty { 
+    border: none;
+}
+
+.level {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-image: url('../images/level.png');
+}
+
+#title {
+	margin-block-start: 12px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}

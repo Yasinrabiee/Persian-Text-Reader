@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Persian Text Reader | خواننده متن فارسی</title>
+	<link rel="stylesheet" href="themes/css/bootstrap.rtl.min.css">
+	<link rel="stylesheet" href="themes/css/style.css">
+	<script src="themes/js/jquery.min.js"></script>
+	<script src="themes/js/script.js" defer></script>
+</head>
+<body>
+	<div id="container">
+		<main>
+			<center>
+				<?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 96.16" style="enable-background:new 0 0 122.88 96.16 width: 32px; height: 32px;" xml:space="preserve"><style type="text/css"><![CDATA[
+					.st0{fill:#2E2E2E;}
+					.st1{fill:#DA5652;}
+				]]></style><g><path class="st1" d="M108.82,14.33c-0.02-0.18-0.05-0.37-0.05-0.57c0-0.19,0.01-0.38,0.05-0.57V0.7 c-8.76-0.83-17.79,0.13-25.68,3.12c-7.37,2.8-13.73,7.39-17.86,13.98v71.15c6.43-4.29,13-7.82,19.75-10.22 c7.69-2.74,15.6-4.04,23.79-3.39V14.33L108.82,14.33L108.82,14.33z M57.71,88.21V17.68C53.74,10.68,47.32,6,40.08,3.22 C31.87,0.08,22.64-0.63,14.6,0.51l-0.43,75.05c8.77-0.32,17.36,0.8,25.43,3.44C46.03,81.09,52.12,84.16,57.71,88.21L57.71,88.21 L57.71,88.21z"/><path class="st0" d="M6.62,79.25l0.35-61.69H0v78.5c9.57-2.47,19.17-4.04,28.85-4.11c8.93-0.05,17.86,1.19,26.81,4.22 c-5.56-4.5-11.76-7.82-18.38-9.97c-8.33-2.72-17.34-3.62-26.58-2.83c-2.09,0.17-3.91-1.38-4.09-3.46 C6.59,79.68,6.59,79.46,6.62,79.25L6.62,79.25L6.62,79.25z M68.95,95.59c8.37-2.63,16.72-3.71,25.08-3.66 c9.67,0.05,19.28,1.64,28.85,4.11V17.56h-6.48v62.03c0,2.09-1.7,3.79-3.79,3.79c-0.3,0-0.59-0.03-0.87-0.1 c-8.29-1.3-16.32-0.22-24.16,2.57C81.26,88.1,75.06,91.47,68.95,95.59L68.95,95.59L68.95,95.59z"/></g></svg>
+			</center>
+			<h1 id="title">خواننده متن فارسی</h1>
+			متن خود را اینجا Paste نمایید:<br>
+			<div id="text_container">
+				<textarea class="form-control" id="text"></textarea>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16" id="x">
+				  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+				</svg>
+			</div>
+			<br>
+			یا فایل عکس از یک کتاب را انتخاب نمایید:
+			<input class="form-control" dir=ltr type=file id=file>
+			<!-- <div class="form-check form-switch mt-4">
+				<input class="form-check-input" type="checkbox" role="switch" id="bionic">
+				<label class="form-check-label" for="bionic">
+					<i class="bi bi-fast-forward"></i> خوانش سریع (Bionic Reading)
+				</label>
+			</div> -->
+			<div class="form-check form-switch mt-4">
+				<input class="form-check-input" type="checkbox" role="switch" id="level">
+				<label class="form-check-label" for="level">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 16">
+					  <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0m-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+					</svg> افزایش سطح پردازش (Level of Processing)
+				</label>
+			</div>
+			<div class="form-check form-switch mt-4" id="dotless_container">
+				<input class="form-check-input" type="checkbox" role="switch" id="dotless">
+				<label class="form-check-label" for="dotless">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+					</svg> بدون نقطه (Dotless)
+				</label>
+			</div>
+			<div class="form-check form-switch mt-4">
+				<input class="form-check-input" type="checkbox" role="switch" id="reverse">
+				<label class="form-check-label" for="reverse">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+					  <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+					</svg>  برعکس‌خوانی (Reverse Reading)
+				</label>
+			</div>
+			<div class="form-check form-switch mt-4">
+				<input class="form-check-input" type="checkbox" role="switch" id="mirror">
+				<label class="form-check-label" for="mirror">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+					  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+					  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+					</svg>  آیینه کردن متن (To mirror)
+				</label>
+			</div>
+			<div class="form-check form-switch mt-4" id="removeSpace_container">
+				<input class="form-check-input" type="checkbox" role="switch" id="removeSpace">
+				<label class="form-check-label" for="mirror">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-magic" viewBox="0 0 16 16">
+					  <path d="M9.5 2.672a.5.5 0 1 0 1 0V.843a.5.5 0 0 0-1 0zm4.5.035A.5.5 0 0 0 13.293 2L12 3.293a.5.5 0 1 0 .707.707zM7.293 4A.5.5 0 1 0 8 3.293L6.707 2A.5.5 0 0 0 6 2.707zm-.621 2.5a.5.5 0 1 0 0-1H4.843a.5.5 0 1 0 0 1zm8.485 0a.5.5 0 1 0 0-1h-1.829a.5.5 0 0 0 0 1zM13.293 10A.5.5 0 1 0 14 9.293L12.707 8a.5.5 0 1 0-.707.707zM9.5 11.157a.5.5 0 0 0 1 0V9.328a.5.5 0 0 0-1 0zm1.854-5.097a.5.5 0 0 0 0-.706l-.708-.708a.5.5 0 0 0-.707 0L8.646 5.94a.5.5 0 0 0 0 .707l.708.708a.5.5 0 0 0 .707 0l1.293-1.293Zm-3 3a.5.5 0 0 0 0-.706l-.708-.708a.5.5 0 0 0-.707 0L.646 13.94a.5.5 0 0 0 0 .707l.708.708a.5.5 0 0 0 .707 0z"/>
+					</svg>  حذف فاصله (Remove The Space)
+				</label>
+			</div>
+			<div id="zoom">
+				<div class="btn btn-sm btn-outline-secondary" id="zoom-in">+</div>
+				<div class="btn btn-sm btn-outline-secondary" id="zoom-100">100%</div>
+				<div class="btn btn-sm btn-outline-secondary" id="zoom-out">-</div>
+			</div>
+			<br>
+			<div id="result_container">
+				<div id="result"></div>
+				<div id="level_container"></div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
