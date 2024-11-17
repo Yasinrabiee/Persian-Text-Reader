@@ -38,6 +38,7 @@ textarea.on('paste', function() {
 		$('#result').html(text);
 	},10);
 	$(`#dotless_container, #removeSpace_container`).show();
+	changeScroll();
 });
 
 fileInput.addEventListener('change', (e) =>{
