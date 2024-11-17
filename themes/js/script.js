@@ -30,7 +30,6 @@ textarea.on('input', function() {
 	const text = $(this).val();
 	result.html(text);
 	$(`#dotless_container, #removeSpace_container`).show();
-	changeScroll();
 });
 
 textarea.on('paste', function() {
@@ -39,7 +38,6 @@ textarea.on('paste', function() {
 		$('#result').html(text);
 	},10);
 	$(`#dotless_container, #removeSpace_container`).show();
-	changeScroll();
 });
 
 fileInput.addEventListener('change', (e) =>{
