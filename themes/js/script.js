@@ -116,3 +116,20 @@ $(`#removeSpace`).change(function() {
 	else
 		result.html(text);
 });
+
+$(`#dark`).click(function() {
+	$(this).toggleClass(`moon`);
+	if($(this).hasClass(`moon`)) {
+		localStorage.setItem(`mode`, `dark`);
+		$(`html`).css(`filter`, `invert(1)`);
+	} else {
+		localStorage.setItem(`mode`, `light`);
+		$(`html`).css(`filter`, `invert(0)`);
+	}
+});
+
+if (localStorage.getItem(`mode`) === `dark`) {
+	$(`html`).css(`filter`, `invert(1)`);
+} else {
+	$(`html`).css(`filter`, `invert(0)`);
+}
