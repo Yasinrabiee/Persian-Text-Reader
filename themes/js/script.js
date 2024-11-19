@@ -109,6 +109,7 @@ $(`#mirror`).change(function() {
 		result.css(`transform`, `scaleX(1)`);
 });
 
+
 $(`#removeSpace`).change(function() {
 	const text = textarea.val();
 	if ($(this).is(`:checked`))
