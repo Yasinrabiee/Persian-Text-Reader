@@ -129,7 +129,7 @@ $(`#dark`).click(function() {
 	}
 });
 
-if (localStorage.getItem(`mode`) === `dark`) {
+if (localStorage.getItem(`mode`) == `dark`) {
 	$(`html`).css(`filter`, `invert(1)`);
 } else {
 	$(`html`).css(`filter`, `invert(0)`);
