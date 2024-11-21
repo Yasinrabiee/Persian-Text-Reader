@@ -20,12 +20,18 @@
 
 html {
 	direction: rtl;
+	font-size: 18px;
 }
 
 body {
 	font-family: Vazir;
 /*	background-color: #3498db !important;*/
 	background-color: #EAEAEA;
+}
+
+b {
+	font-weight: bold;
+	font-family: VazirBold;
 }
 
 a,
@@ -38,7 +44,7 @@ a:visited {
 #container {
 	max-width: 750px;
 	width: 100%;
-	margin: 3rem auto;
+	margin: 1rem auto;
 	text-align: justify;
 }
 

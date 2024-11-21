@@ -6,7 +6,7 @@ const x = $(`#x`);
 function changeScroll() {
 	$(`html, body`).animate({
 		scrollTop: result.offset().top
-	},1000)
+	},1000);
 }
 
 textarea.focus(function() {
@@ -29,7 +29,7 @@ x.click(function() {
 textarea.on('input', function() {
 	const text = $(this).val();
 	result.html(text);
-	$(`#dotless_container, #removeSpace_container`).show();
+	$(`#dotless_container, #bionic_container`).show();
 });
 
 textarea.on('paste', function() {
@@ -37,12 +37,12 @@ textarea.on('paste', function() {
 		let text = $('#text').val();
 		$('#result').html(text);
 	},10);
-	$(`#dotless_container, #removeSpace_container`).show();
+	$(`#dotless_container, #bionic_container`).show();
 	changeScroll();
 });
 
 fileInput.addEventListener('change', (e) =>{
-	$(`#dotless_container, #removeSpace_container`).hide();
+	$(`#dotless_container, #bionic_container`).hide();
 	const file = e.target.files[0];
 	let fileReader = new FileReader();
 	fileReader.readAsDataURL(file);
@@ -68,7 +68,20 @@ $(`#zoom-100`).click(function(e) {
 });
 
 $(`#bionic`).change(function() {
-	// ???
+	const pureText = result.text();
+	if ($(this).is(`:checked`)) {
+		pureText.replaceAll(`  `, ``);
+		let splitedText = pureText.split(` `);
+		const l = splitedText.length;
+		for(let i = 0; i < l; i++) {
+			let sliced = splitedText[i].length > 2 ? splitedText[i].substr(0, 2) : splitedText[i].substr(0, 1); 
+			console.log(sliced);
+			splitedText[i] = splitedText[i].replace(sliced, `<b>${sliced}</b>`);
+		}
+		result.html(splitedText.join(` `));		
+	} else {
+		result.html(pureText);
+	}
 });
 
 $(`#level`).change(function() {
@@ -107,15 +120,6 @@ $(`#mirror`).change(function() {
 	}
 	else 
 		result.css(`transform`, `scaleX(1)`);
-});
-
-
-$(`#removeSpace`).change(function() {
-	const text = textarea.val();
-	if ($(this).is(`:checked`))
-		result.html(text.replace(/ /g, ``));
-	else
-		result.html(text);
 });
 
 $(`#dark`).click(function() {
