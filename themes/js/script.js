@@ -1,5 +1,5 @@
 const textarea = $(`textarea`);
-const fileInput = document.querySelector(`#file`);
+const fileInput = $(`#file`);
 const result = $(`#result`);
 const x = $(`#x`);
 
@@ -35,13 +35,13 @@ textarea.on('input', function() {
 textarea.on('paste', function() {
 	setTimeout(function(){
 		let text = $('#text').val();
-		$('#result').html(text);
+		$(`#result`).html(text);
 	},10);
 	$(`#dotless_container, #bionic_container`).show();
 	changeScroll();
 });
 
-fileInput.addEventListener('change', (e) =>{
+fileInput.change(function(e) {
 	$(`#dotless_container, #bionic_container`).hide();
 	const file = e.target.files[0];
 	let fileReader = new FileReader();
@@ -74,7 +74,8 @@ $(`#bionic`).change(function() {
 		let splitedText = pureText.split(` `);
 		const l = splitedText.length;
 		for(let i = 0; i < l; i++) {
-			let sliced = splitedText[i].length > 2 ? splitedText[i].substr(0, 2) : splitedText[i].substr(0, 1); 
+			let sliced = splitedText[i].length > 2 ?
+			splitedText[i].substr(0, 2) : splitedText[i].substr(0, 1); 
 			console.log(sliced);
 			splitedText[i] = splitedText[i].replace(sliced, `<b>${sliced}</b>`);
 		}

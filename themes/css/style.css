@@ -60,6 +60,10 @@ textarea {
 	font-family: inherit;
 }
 
+input[type="chec"] {
+	cursor: pointer;
+}
+
 #text_container {
 	position: relative;
 }
